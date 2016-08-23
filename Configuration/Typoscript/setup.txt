@@ -1,0 +1,23 @@
+#plugin.tx_extbase {
+#  persistence {
+#    classes {
+#      CIC\Cicshorturls\Domain\Model\Page {
+#        mapping {
+#          tableName = pages
+#        }
+#      }
+#    }
+#  }
+#}
+
+#plugin.tx_cicshorturls {
+#  persistence {
+#    classes {
+#      CIC\Cicshorturls\Domain\Model\Page {
+#        mapping {
+#          tableName = pages
+#        }
+#      }
+#    }
+#  }
+#}

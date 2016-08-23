@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-01-13T20:31:06Z" product-name="cicshorturls">
+		<header/>
+		<body>
+			<trans-unit id="uri.description">
+				<source>The short URI. Relative paths only. Slashes at ends are superfluous. They will automatically be honored
+				on the frontend</source>
+			</trans-unit>
+			<trans-unit id="page.description">
+				<source>The page to which this URI will redirect</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
