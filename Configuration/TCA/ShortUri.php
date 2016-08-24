@@ -17,7 +17,7 @@ $GLOBALS['TCA']['tx_cicshorturls_domain_model_shorturi'] = array(
 	'columns' => array(
 
 		'uri' => array(
-			'exclude' => 1,
+			'exclude' => 0,
 			'label' => 'LLL:EXT:cicshorturls/Resources/Private/Language/locallang_db.xlf:tx_cicshorturls_domain_model_shorturi.uri',
 			'config' => array(
 				'type' => 'input',
@@ -26,7 +26,7 @@ $GLOBALS['TCA']['tx_cicshorturls_domain_model_shorturi'] = array(
 			),
 		),
 		'page' => array(
-			'exclude' => 1,
+			'exclude' => 0,
 			'label' => 'LLL:EXT:cicshorturls/Resources/Private/Language/locallang_db.xlf:tx_cicshorturls_domain_model_shorturi.page',
 			'config' => array(
 				'type' => 'group',
