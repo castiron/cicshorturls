@@ -124,10 +124,12 @@ class UriRedirectController {
         /** @var \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController $TSFE */
         $TSFE = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
             'TYPO3\\CMS\\Frontend\\Controller\\TypoScriptFrontendController', $GLOBALS['TYPO3_CONF_VARS'], 0, 0);
+
+        EidUtility::initTCA();
         $TSFE->initFEuser();
         $TSFE->determineId();
         $TSFE->initTemplate();
         $TSFE->getConfigArray();
-        EidUtility::initTCA();
+
     }
 }
