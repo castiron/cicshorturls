@@ -53,7 +53,12 @@ class ShortUriRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
      * @return null
      */
     public function findOneByUri($uri) {
-        $res = $this->db->exec_SELECTgetRows('uri,uid,page,pid', self::TABLE_NAME, 'uri=' . $this->db->fullQuoteStr($uri, self::TABLE_NAME), '', '', '1');
+        $res = $this->db->exec_SELECTgetRows(
+            'uri,uid,page,pid',
+            self::TABLE_NAME,
+            'uri=' . $this->db->fullQuoteStr($uri, self::TABLE_NAME),
+            '', '', '1'
+        );
         if ($res[0]) {
             return $this->shortUriFactory->get($res[0]);
         }

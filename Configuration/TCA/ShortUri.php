@@ -22,7 +22,7 @@ $GLOBALS['TCA']['tx_cicshorturls_domain_model_shorturi'] = array(
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
-				'eval' => 'trim,unique,lower,required'
+				'eval' => 'trim,unique,lower,required,CIC\\Cicshorturls\\Tca\\UrlNormalizeEvaluation'
 			),
 		),
 		'page' => array(
@@ -46,3 +46,5 @@ $GLOBALS['TCA']['tx_cicshorturls_domain_model_shorturi'] = array(
 
 	),
 );
+
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals']['CIC\\Cicshorturls\\Tca\\UrlNormalizeEvaluation'] = '';
