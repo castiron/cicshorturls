@@ -34,6 +34,7 @@ $GLOBALS['TCA']['tx_cicshorturls_domain_model_shorturi'] = array(
                 'allowed' => 'pages',
 				'foreign_table' => 'pages',
 				'minitems' => 1,
+                'show_thumbs' => 1,
 				'maxitems' => 1,
                 'size' => 1,
                 'wizards' => array(
