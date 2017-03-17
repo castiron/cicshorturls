@@ -17,7 +17,8 @@ CREATE TABLE tx_cicshorturls_domain_model_shorturi (
 	endtime int(11) unsigned DEFAULT '0' NOT NULL,
 
 	PRIMARY KEY (uid),
-	KEY parent (pid),
+	UNIQUE KEY uri (uri),
+	KEY parent (pid)
 
 );
 
