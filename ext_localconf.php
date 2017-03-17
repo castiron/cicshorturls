@@ -30,3 +30,13 @@ $TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations'][$cacheKey] = array(
  */
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['clearCachePostProc'][] =
     'CIC\\Cicshorturls\\Hook\\ClearShortUriCacheHook->execute';
+
+
+\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class)->registerIcon(
+    'bolt-icon',
+    \TYPO3\CMS\Core\Imaging\IconProvider\FontawesomeIconProvider::class,
+    [
+        'name'     => 'bolt',
+        'spinning' => true
+    ]
+);

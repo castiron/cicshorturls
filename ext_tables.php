@@ -64,7 +64,7 @@ $GLOBALS['TCA']['tx_cicshorturls_domain_model_shorturi'] = array(
 		),
 		'searchFields' => 'uri,page,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/ShortUri.php',
-		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_cicshorturls_domain_model_shorturi.gif'
+		'iconfile' => 'EXT:cicshorturls/Resources/Public/Icons/tx_cicshorturls_domain_model_shorturi.gif'
 	),
 );
 
