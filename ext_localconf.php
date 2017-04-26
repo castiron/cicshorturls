@@ -31,12 +31,29 @@ $TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations'][$cacheKey] = array(
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['clearCachePostProc'][] =
     'CIC\\Cicshorturls\\Hook\\ClearShortUriCacheHook->execute';
 
+if (
+    class_exists('TYPO3\\CMS\\Core\\Imaging\\IconProvider\\FontawesomeIconProvider') &&
+    class_exists('TYPO3\\CMS\\Core\\Imaging\\IconRegistry')
+) {
+    \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Imaging\\IconRegistry')->registerIcon(
+        'bolt-icon',
+        'TYPO3\\CMS\\Core\\Imaging\\IconProvider\\FontawesomeIconProvider',
+        [
+            'name'     => 'bolt',
+            'spinning' => true
+        ]
+    );
+}
 
-\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class)->registerIcon(
-    'bolt-icon',
-    \TYPO3\CMS\Core\Imaging\IconProvider\FontawesomeIconProvider::class,
-    [
-        'name'     => 'bolt',
-        'spinning' => true
-    ]
-);
+/**
+ * Hook to remove short URIs that are copied when a page is copied
+ */
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processCmdmapClass'][] =
+    'CIC\\Cicshorturls\\Hook\\RemoveCopiedShortUrisHook';
+
+/**
+ * Hook to fix wrong pid on Short URIs when a page is moved (there seems to be a bug in the default TCA values in
+ * this case).
+ */
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processCmdmapClass'][] =
+    'CIC\\Cicshorturls\\Hook\\EnsureShortUriStorageHook';
