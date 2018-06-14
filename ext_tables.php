@@ -46,27 +46,6 @@ $tempColumns = Array(
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_cicshorturls_domain_model_shorturi', 'EXT:cicshorturls/Resources/Private/Language/locallang_csh_tx_cicshorturls_domain_model_shorturi.xlf');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_cicshorturls_domain_model_shorturi');
-$GLOBALS['TCA']['tx_cicshorturls_domain_model_shorturi'] = array(
-	'ctrl' => array(
-		'title'	=> 'LLL:EXT:cicshorturls/Resources/Private/Language/locallang_db.xlf:tx_cicshorturls_domain_model_shorturi',
-		'label' => 'uri',
-		'tstamp' => 'tstamp',
-		'crdate' => 'crdate',
-		'cruser_id' => 'cruser_id',
-		'dividers2tabs' => TRUE,
-
-
-//		'delete' => 'deleted',
-		'enablecolumns' => array(
-			'disabled' => 'hidden',
-			'starttime' => 'starttime',
-			'endtime' => 'endtime',
-		),
-		'searchFields' => 'uri,page,',
-		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/ShortUri.php',
-		'iconfile' => 'EXT:cicshorturls/Resources/Public/Icons/tx_cicshorturls_domain_model_shorturi.gif'
-	),
-);
 
 /**
  * Add the storage pid
@@ -77,3 +56,5 @@ if ($storagePid = $GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTKEY]['storagePid']
           intval($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTKEY]['storagePid'])
     );
 }
+
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals']['CIC\\Cicshorturls\\Tca\\UrlNormalizeEvaluation'] = '';
