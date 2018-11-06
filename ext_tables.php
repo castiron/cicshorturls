@@ -26,19 +26,6 @@ $tempColumns = Array(
     ),
 );
 
-//$tempColumns = Array(
-//    'tx_cicshorturls_uris' => array(
-//        'exclude' => 0,
-//        'label' => 'Short URIs (1 per line)',
-//        'config' => array(
-//            'type' => 'text',
-//            'cols' => 30,
-//            'rows' => 3,
-//            'eval' => 'trim'
-//        ),
-//    ),
-//);
-
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $tempColumns);
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages', 'tx_cicshorturls_uris', '', 'before:tx_realurl_pathsegment');
 
